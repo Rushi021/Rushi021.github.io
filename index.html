@@ -1090,11 +1090,28 @@
   .project-card {
     background: var(--paper-deep);
     border: 1px solid var(--ink-line);
-    transition: all 0.3s;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    opacity: 0;
+    transform: translateX(60px);
+    animation: slideInFromRight 0.6s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+  }
+  .project-card:nth-child(1) { animation-delay: 0.05s; }
+  .project-card:nth-child(2) { animation-delay: 0.15s; }
+  .project-card:nth-child(3) { animation-delay: 0.25s; }
+  .project-card:nth-child(4) { animation-delay: 0.35s; }
+  .project-card:nth-child(5) { animation-delay: 0.45s; }
+  .project-card:nth-child(6) { animation-delay: 0.55s; }
+  .project-card:nth-child(7) { animation-delay: 0.65s; }
+  .project-card:nth-child(8) { animation-delay: 0.75s; }
+  @keyframes slideInFromRight {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
   .project-card:hover {
     border-color: var(--orange);
@@ -1927,7 +1944,25 @@
 <script>
   /* ============ DEFAULT PROJECTS ============ */
   const defaultProjects = [
-    // Empty by default — populate via Edit Mode (Ctrl+Shift+G)
+    {
+      "title": "JobFlow AI",
+      "desc": "AI-powered job application assistant that automates the entire application workflow, scaling daily output from 8 manual applications to 20 fully personalized submissions per day.",
+      "stack": [
+        "Python",
+        "React.js",
+        "TypeScript",
+        "PostgreSQL",
+        "LLM",
+        "Google Auth",
+        "S3 Storage",
+        "RBAC",
+        "API Microservices",
+        "Render"
+      ],
+      "status": "live",
+      "year": "2026",
+      "link": "https://github.com/Rushi021/AI-application-assistant"
+    }
   ];
 
   /* ============ STATE ============ */
@@ -1989,11 +2024,6 @@
       const stackHtml = (p.stack || []).map(s => `<span>${escapeHtml(s)}</span>`).join('');
       const statusClass = p.status === 'shipped' ? 'shipped' : p.status === 'live' ? 'live' : '';
       card.innerHTML = `
-        <div class="project-banner">
-          <div class="dots"><span class="on"></span><span></span><span></span></div>
-          <span>ITEM NO.${String(idx + 1).padStart(3, '0')}</span>
-          <span>${escapeHtml(p.year || 'YYYY')}</span>
-        </div>
         <div class="project-body">
           <div class="project-meta-row">
             <span>// ${escapeHtml(p.year || '----')}</span>
