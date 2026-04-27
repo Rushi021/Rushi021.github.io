@@ -266,12 +266,12 @@
 
   .hero-sub {
     font-family: 'Special Elite', monospace;
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.7;
     color: var(--ink);
-    max-width: 520px;
+    max-width: 540px;
     margin-bottom: 32px;
-    padding: 18px 22px;
+    padding: 20px 24px;
     background: var(--paper-deep);
     border: 1px solid var(--ink-line);
     border-left: 3px solid var(--orange);
@@ -546,9 +546,9 @@
   }
   .principle-body {
     font-family: 'Special Elite', monospace;
-    font-size: 12px;
-    line-height: 1.7;
-    color: var(--ink-soft);
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--ink);
   }
 
   /* TOOLBOX ================================================== */
@@ -592,7 +592,7 @@
   .tool-list {
     list-style: none;
     font-family: 'Special Elite', monospace;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 2;
   }
   .tool-list li {
@@ -852,7 +852,7 @@
   }
   .checkpoint-company {
     font-family: 'Special Elite', monospace;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--orange);
     margin-bottom: 14px;
   }
@@ -872,9 +872,9 @@
   }
   .checkpoint-desc {
     font-family: 'Archivo', sans-serif;
-    font-size: 13px;
-    line-height: 1.6;
-    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink);
   }
   .checkpoint-meta {
     display: flex;
@@ -979,7 +979,7 @@
   }
   .edu-meta-item {
     font-family: 'Special Elite', monospace;
-    font-size: 12px;
+    font-size: 13px;
     color: var(--ink);
     line-height: 1.4;
   }
@@ -1011,8 +1011,8 @@
   }
   .edu-coursework-list span {
     font-family: 'Special Elite', monospace;
-    font-size: 11px;
-    padding: 5px 10px;
+    font-size: 12px;
+    padding: 6px 12px;
     background: var(--paper);
     border: 1px solid var(--ink-line);
     color: var(--ink);
@@ -1025,9 +1025,9 @@
   }
   .edu-detail {
     font-family: 'Archivo', sans-serif;
-    font-size: 13px;
-    line-height: 1.6;
-    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink);
   }
   .edu-year {
     margin-top: 14px;
@@ -1166,9 +1166,9 @@
   }
   .project-desc {
     font-family: 'Special Elite', monospace;
-    font-size: 12px;
-    line-height: 1.65;
-    color: var(--ink-soft);
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--ink);
     margin-bottom: 16px;
   }
   .project-stack {
@@ -1389,9 +1389,10 @@
   }
   .contact-sub {
     font-family: 'Special Elite', monospace;
-    font-size: 14px;
+    font-size: 15px;
     margin-bottom: 36px;
-    color: var(--ink-soft);
+    color: var(--ink);
+    line-height: 1.6;
   }
   .contact-links {
     display: flex;
@@ -1962,6 +1963,77 @@
       "status": "live",
       "year": "2026",
       "link": "https://github.com/Rushi021/AI-application-assistant"
+    },
+    {
+      "title": "MyFinancial Advisor",
+      "desc": "A stock decision-support system that combines LSTM-based price forecasting with an LLM + RAG layer over market news and SEC filings, so every recommendation comes paired with the evidence behind it. Built for users who want answers they can interrogate, not predictions they have to trust blindly.",
+      "stack": [
+        "Python",
+        "LSTM",
+        "PyTorch",
+        "LLM",
+        "RAG",
+        "LangChain",
+        "Feature Engineering"
+      ],
+      "status": "building",
+      "year": "2026",
+      "link": "https://github.com/Rushi021/AI-investment-system"
+    },
+    {
+      "title": "Residential Energy Forecasting",
+      "desc": "Predictive modeling project simulating how a +5°F summer temperature spike would impact residential electricity demand across 5,000 South Carolina homes. Trained a Random Forest model on integrated weather, energy consumption, and home-characteristic data to forecast a projected 21% surge in average usage. Shipped as an interactive Shiny dashboard so utility planners can drill into appliance-level patterns, peak-hour windows, and county-level demand maps without touching the underlying data.",
+      "stack": [
+        "R",
+        "Random Forest",
+        "Time Series Analysis",
+        "Feature Engineering",
+        "Geospatial Analysis",
+        "Shiny",
+        "ggplot2",
+        "Leaflet",
+        "Tidyverse",
+        "caret"
+      ],
+      "status": "shipped",
+      "year": "2025",
+      "link": "https://github.com/Rushi021/residential-energy-forecasting"
+    },
+    {
+      "title": "KarmaScore Predictor",
+      "desc": "End-to-end churn prediction system on 10K+ subscription records, covering everything from raw data cleaning to deployed dashboard. Compared multiple models (Logistic Regression, Random Forest, XGBoost) with hyperparameter tuning and cross-validation before XGBoost won out at 89% precision. SHAP-based interpretability turned raw model output into specific retention actions, surfaced through a Streamlit dashboard built for non-technical operators.",
+      "stack": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Data Cleaning",
+        "Feature Engineering",
+        "Scikit-learn",
+        "XGBoost",
+        "Random Forest",
+        "Logistic Regression",
+        "Hyperparameter Tuning",
+        "Cross-Validation",
+        "SHAP",
+        "Streamlit"
+      ],
+      "status": "shipped",
+      "year": "2025",
+      "link": "#"
+    },
+    {
+      "title": "Annual Report Analyst",
+      "desc": "Published IRJET research project that processed 50+ annual reports through GPT-3.5 Turbo to extract analyst-style answers on investment trends, financial health, and forward guidance. Demonstrated that LLMs can replace hours of manual report-reading with structured, citation-backed Q&A.",
+      "stack": [
+        "Python",
+        "GPT-3.5",
+        "NLP",
+        "PDF Parsing",
+        "Prompt Engineering"
+      ],
+      "status": "shipped",
+      "year": "2024",
+      "link": "#"
     }
   ];
 
