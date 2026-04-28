@@ -147,15 +147,180 @@
     .container { margin: 0 0 0 36px; border-right: none; }
   }
 
+  /* NAVIGATION ============================================== */
+  .nav-bar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background: rgba(14, 14, 16, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--ink-line);
+  }
+  .nav-bar::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background: var(--orange);
+    box-shadow: 0 0 8px var(--orange);
+    transition: width 0.6s ease;
+  }
+  .nav-bar.scrolled::after {
+    width: 100%;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .nav-brand-mark {
+    width: 12px;
+    height: 12px;
+    background: var(--orange);
+    box-shadow: 0 0 10px rgba(255, 90, 31, 0.5);
+    animation: navPulse 2s ease-in-out infinite;
+  }
+  @keyframes navPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(0.85); opacity: 0.7; }
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .nav-link {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 10px 14px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    position: relative;
+  }
+  .nav-link:hover {
+    color: var(--ink);
+    border-color: var(--ink-line);
+  }
+  .nav-link.active {
+    color: var(--orange);
+    border-color: var(--orange);
+    background: rgba(255, 90, 31, 0.06);
+  }
+  .nav-link.active::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background: var(--orange);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--orange);
+  }
+  .nav-link-icon {
+    font-size: 9px;
+    margin-left: 2px;
+    opacity: 0.7;
+  }
+  .nav-link-cta {
+    background: var(--orange);
+    color: var(--paper);
+    border-color: var(--orange);
+    margin-left: 4px;
+  }
+  .nav-link-cta:hover {
+    background: transparent;
+    color: var(--orange);
+    border-color: var(--orange);
+    box-shadow: 0 0 12px rgba(255, 90, 31, 0.3);
+  }
+
+  /* mobile burger */
+  .nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--ink-line);
+    padding: 10px 12px;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--ink);
+    transition: all 0.3s;
+  }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  @media (max-width: 900px) {
+    .nav-bar { padding: 14px 20px; }
+    .nav-brand-text { display: none; }
+    .nav-toggle { display: flex; }
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      background: var(--paper-deep);
+      border-bottom: 1px solid var(--ink-line);
+      padding: 8px;
+      gap: 4px;
+      transform: translateY(-120%);
+      transition: transform 0.3s;
+      pointer-events: none;
+    }
+    .nav-links.open {
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .nav-link {
+      display: block;
+      padding: 14px 16px;
+      text-align: left;
+    }
+    .nav-link-cta {
+      margin-left: 0;
+      margin-top: 4px;
+    }
+  }
+
   /* COMIC PANEL */
   .panel {
     border-bottom: 1px solid var(--ink-line);
     padding: 56px 64px;
     position: relative;
+    scroll-margin-top: 80px;
   }
   .panel:last-of-type { border-bottom: 1px solid var(--ink-line); }
   @media (max-width: 768px) {
-    .panel { padding: 32px 24px; }
+    .panel { padding: 32px 24px; scroll-margin-top: 70px; }
   }
 
   /* PANEL TAGS (top-left product label) */
@@ -871,9 +1036,9 @@
     background: rgba(245, 185, 66, 0.06);
   }
   .checkpoint-desc {
-    font-family: 'Archivo', sans-serif;
-    font-size: 14px;
-    line-height: 1.7;
+    font-family: 'Special Elite', monospace;
+    font-size: 13px;
+    line-height: 1.75;
     color: var(--ink);
   }
   .checkpoint-meta {
@@ -1024,9 +1189,9 @@
     color: var(--orange);
   }
   .edu-detail {
-    font-family: 'Archivo', sans-serif;
-    font-size: 14px;
-    line-height: 1.7;
+    font-family: 'Special Elite', monospace;
+    font-size: 13px;
+    line-height: 1.75;
     color: var(--ink);
   }
   .edu-year {
@@ -1471,8 +1636,28 @@
 
 <div class="container">
 
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="nav-bar" id="nav-bar">
+    <div class="nav-brand">
+      <span class="nav-brand-mark"></span>
+      <span class="nav-brand-text">RUSHI / SAVANI</span>
+    </div>
+    <div class="nav-links">
+      <a href="#home" class="nav-link" data-section="home">Home</a>
+      <a href="#stack" class="nav-link" data-section="stack">Stack</a>
+      <a href="#education" class="nav-link" data-section="education">Education</a>
+      <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+      <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+      <a href="resume.pdf" class="nav-link" target="_blank" rel="noopener">Resume <span class="nav-link-icon">↗</span></a>
+      <a href="#contact" class="nav-link nav-link-cta" data-section="contact">Contact</a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
   <!-- ============ HERO PANEL ============ -->
-  <section class="panel hero">
+  <section class="panel hero" id="home">
     <div class="hero-left">
       <div class="hero-tag-row">
         <span class="panel-tag">Builder's Manual</span>
@@ -1554,7 +1739,7 @@
   </section>
 
   <!-- ============ PRINCIPLES PANEL ============ -->
-  <section class="panel reveal">
+  <section class="panel reveal" id="principles">
     <div class="section-head">
       <div>
         <span class="panel-tag">02 / OPERATING PRINCIPLES</span>
@@ -1588,7 +1773,7 @@
   </section>
 
   <!-- ============ TOOLBOX PANEL ============ -->
-  <section class="panel reveal">
+  <section class="panel reveal" id="stack">
     <div class="section-head">
       <div>
         <span class="panel-tag orange">03 / THE STACK</span>
@@ -1617,9 +1802,11 @@
           <li>LLM Engineering</li>
           <li>RAG Pipelines</li>
           <li>Prompt Engineering</li>
-          <li>Vector Embeddings</li>
-          <li>Regression & Classification Models</li>
-          <li>Decision Trees & Ensemble Methods</li>
+          <li>Agentic Workflows</li>
+          <li>Neural Networks</li>
+          <li>CNNs</li>
+          <li>Regression & Classification</li>
+          <li>Decision Trees & Ensembles</li>
           <li>Hyperparameter Tuning</li>
         </ul>
       </div>
@@ -1677,7 +1864,7 @@
   </section>
 
   <!-- ============ EDUCATION PANEL (04) ============ -->
-  <section class="panel reveal">
+  <section class="panel reveal" id="education">
     <div class="section-head">
       <div>
         <span class="panel-tag">04 / EDUCATION</span>
@@ -1733,7 +1920,7 @@
   </section>
 
   <!-- ============ PROJECTS PANEL (05) ============ -->
-  <section class="panel reveal">
+  <section class="panel reveal" id="projects">
     <div class="section-head">
       <div>
         <span class="panel-tag orange">05 / INVENTORY</span>
@@ -1760,7 +1947,7 @@
   </section>
 
   <!-- ============ EXPERIENCE / TREASURE HUNT (06) ============ -->
-  <section class="panel reveal">
+  <section class="panel reveal" id="experience">
     <div class="section-head">
       <div>
         <span class="panel-tag">06 / FIELD LOG</span>
@@ -1879,7 +2066,7 @@
   </section>
 
   <!-- ============ CONTACT PANEL ============ -->
-  <section class="panel contact-panel reveal">
+  <section class="panel contact-panel reveal" id="contact">
     <div class="section-head">
       <div>
         <span class="panel-tag">07 / CHANNEL</span>
@@ -2357,17 +2544,70 @@
   setTimeout(rebuildTimeline, 100);
   setTimeout(rebuildTimeline, 500);
 
-  // Animate path on scroll
+  // Animate path on scroll + nav scroll-spy
   let ticking = false;
   window.addEventListener('scroll', () => {
     if (!ticking) {
       window.requestAnimationFrame(() => {
         updateTimelineProgress();
+        updateNavSpy();
         ticking = false;
       });
       ticking = true;
     }
   }, { passive: true });
+
+  /* ============ NAVIGATION SCROLL-SPY + MOBILE TOGGLE ============ */
+  const navBar = document.getElementById('nav-bar');
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const navLinkEls = document.querySelectorAll('.nav-link[data-section]');
+  const sectionIds = ['home', 'stack', 'education', 'projects', 'experience', 'contact'];
+
+  function updateNavSpy() {
+    if (!navBar) return;
+    // Add scrolled state shadow line after 40px
+    if (window.scrollY > 40) {
+      navBar.classList.add('scrolled');
+    } else {
+      navBar.classList.remove('scrolled');
+    }
+
+    // Find current section by checking which one is most in view
+    const triggerLine = window.innerHeight * 0.35;
+    let currentId = sectionIds[0];
+    for (const id of sectionIds) {
+      const el = document.getElementById(id);
+      if (!el) continue;
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= triggerLine) {
+        currentId = id;
+      }
+    }
+    navLinkEls.forEach(link => {
+      if (link.dataset.section === currentId) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+  updateNavSpy();
+
+  // Mobile burger toggle
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    // Close mobile menu when a link is clicked
+    navLinkEls.forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+  }
 </script>
 
 </body>
