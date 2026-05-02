@@ -38,7 +38,6 @@
     position: relative;
   }
 
-  /* HALFTONE PAPER TEXTURE - subtle, non-blending */
   body::before {
     content: '';
     position: fixed;
@@ -52,7 +51,6 @@
     opacity: 1;
   }
 
-  /* SUBTLE GRAIN - barely visible, non-blending */
   body::after {
     content: '';
     position: fixed;
@@ -64,7 +62,6 @@
     opacity: 1;
   }
 
-  /* LEFT VERTICAL SIDEBAR (rotated text) */
   .sidebar {
     position: fixed;
     left: 0;
@@ -100,7 +97,6 @@
   }
   .sidebar-icon svg { width: 100%; height: 100%; }
 
-  /* RIGHT VERTICAL SIDEBAR */
   .sidebar-right {
     position: fixed;
     right: 0;
@@ -131,7 +127,6 @@
     color: var(--orange);
   }
 
-  /* MAIN CONTAINER */
   .container {
     margin: 0 56px 0 56px;
     padding: 0;
@@ -147,7 +142,6 @@
     .container { margin: 0 0 0 36px; border-right: none; }
   }
 
-  /* NAVIGATION ============================================== */
   .nav-bar {
     position: sticky;
     top: 0;
@@ -256,7 +250,6 @@
     box-shadow: 0 0 12px rgba(255, 90, 31, 0.3);
   }
 
-  /* mobile burger */
   .nav-toggle {
     display: none;
     background: transparent;
@@ -311,7 +304,6 @@
     }
   }
 
-  /* COMIC PANEL */
   .panel {
     border-bottom: 1px solid var(--ink-line);
     padding: 56px 64px;
@@ -323,7 +315,6 @@
     .panel { padding: 32px 24px; scroll-margin-top: 70px; }
   }
 
-  /* PANEL TAGS (top-left product label) */
   .panel-tag {
     display: inline-block;
     background: var(--ink);
@@ -351,7 +342,6 @@
   }
   .panel-tag.orange::after { background: var(--ink); }
 
-  /* PANEL META (block / valid for) */
   .panel-meta {
     font-family: 'Archivo Black', sans-serif;
     font-size: 10px;
@@ -362,7 +352,6 @@
   }
   .panel-meta .num { color: var(--orange); }
 
-  /* HEADLINES */
   .headline-xl {
     font-family: 'Bowlby One', sans-serif;
     font-size: clamp(3.5rem, 11vw, 9rem);
@@ -395,7 +384,6 @@
     text-transform: uppercase;
   }
 
-  /* HERO ===================================================== */
   .hero {
     display: grid;
     grid-template-columns: 1.1fr 1fr;
@@ -483,7 +471,6 @@
   }
   .stat-card.orange .stat-value { color: var(--paper); }
 
-  /* HERO ILLUSTRATION (the satellite receiver) */
   .hero-right {
     position: relative;
     min-height: 480px;
@@ -492,7 +479,6 @@
     justify-content: center;
   }
 
-  /* LIVE STATUS DISPLAY */
   .status-display {
     width: 100%;
     max-width: 540px;
@@ -656,7 +642,6 @@
     letter-spacing: 0.05em;
   }
 
-  /* SECTION HEADER */
   .section-head {
     display: flex;
     justify-content: space-between;
@@ -674,7 +659,6 @@
     text-shadow: 0 0 30px rgba(255, 90, 31, 0.25);
   }
 
-  /* PRINCIPLES =============================================== */
   .principles {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -716,7 +700,6 @@
     color: var(--ink);
   }
 
-  /* TOOLBOX ================================================== */
   .toolbox {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -774,7 +757,6 @@
     top: 4px;
   }
 
-  /* ============ EXPERIENCE / TREASURE HUNT ============ */
   .timeline-wrap {
     position: relative;
     margin-top: 20px;
@@ -868,7 +850,6 @@
     padding: 80px 0;
   }
 
-  /* SVG path is drawn separately — checkpoints positioned absolutely */
   .timeline-path-svg {
     position: absolute;
     top: 0;
@@ -898,7 +879,6 @@
     filter: drop-shadow(0 0 8px rgba(255, 90, 31, 0.4));
   }
 
-  /* checkpoints */
   .checkpoint {
     position: relative;
     z-index: 4;
@@ -1062,7 +1042,6 @@
     color: var(--ink-soft);
   }
 
-  /* "FINAL DESTINATION" END MARKER */
   .timeline-end {
     text-align: center;
     margin-top: 40px;
@@ -1082,7 +1061,6 @@
     box-shadow: 0 0 30px rgba(255, 90, 31, 0.4);
   }
 
-  /* EDUCATION ================================================ */
   .education-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -1204,7 +1182,6 @@
     color: var(--ink-soft);
   }
 
-  /* PROJECTS ================================================= */
   .projects-bar {
     display: flex;
     justify-content: space-between;
@@ -1381,7 +1358,86 @@
     content: '→';
   }
 
-  /* edit mode */
+  /* ============ VIDEO DROPDOWN (NEW) ============ */
+  .video-dropdown-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .video-dropdown-btn {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: var(--orange);
+    border: 1px solid var(--orange);
+    color: var(--paper);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .video-dropdown-btn:hover {
+    background: transparent;
+    color: var(--orange);
+    box-shadow: 0 0 16px rgba(255, 90, 31, 0.3);
+  }
+  .video-dropdown-btn .dd-arrow {
+    font-size: 8px;
+    transition: transform 0.2s;
+  }
+  .video-dropdown-btn.open .dd-arrow {
+    transform: rotate(180deg);
+  }
+  .video-dropdown-menu {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 0;
+    min-width: 240px;
+    background: var(--paper-deep);
+    border: 1px solid var(--orange);
+    box-shadow: 0 -8px 30px rgba(255, 90, 31, 0.15);
+    z-index: 50;
+  }
+  .video-dropdown-menu.open {
+    display: block;
+    animation: dropUp 0.2s ease-out;
+  }
+  @keyframes dropUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .video-dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink-line);
+    transition: all 0.15s;
+  }
+  .video-dropdown-menu a:last-child {
+    border-bottom: none;
+  }
+  .video-dropdown-menu a:hover {
+    background: rgba(255, 90, 31, 0.1);
+    color: var(--orange);
+  }
+  .video-dropdown-menu a::before {
+    content: '▶';
+    font-size: 8px;
+    color: var(--orange);
+  }
+  /* ============ END VIDEO DROPDOWN ============ */
+
   body.edit-mode .project-card { border-style: dashed; }
   .edit-actions {
     display: none;
@@ -1457,7 +1513,6 @@
     margin: 0 2px;
   }
 
-  /* MODAL ==================================================== */
   .modal-backdrop {
     display: none;
     position: fixed;
@@ -1525,7 +1580,6 @@
     margin-top: 28px;
   }
 
-  /* CONTACT ================================================== */
   .contact-panel {
     background: var(--paper-deep);
     color: var(--ink);
@@ -1584,7 +1638,6 @@
     transform: translateY(-2px);
   }
 
-  /* footer */
   footer {
     text-align: center;
     padding: 30px;
@@ -1603,7 +1656,6 @@
     border: 1px solid var(--ink-line);
   }
 
-  /* reveal */
   .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -1636,7 +1688,6 @@
 
 <div class="container">
 
-  <!-- ============ NAVIGATION ============ -->
   <nav class="nav-bar" id="nav-bar">
     <div class="nav-brand">
       <span class="nav-brand-mark"></span>
@@ -1987,14 +2038,10 @@
     </div>
 
     <div class="timeline" id="timeline">
-      <!-- SVG path overlay -->
       <div class="timeline-path-svg" aria-hidden="true">
-        <svg id="path-svg" preserveAspectRatio="none">
-          <!-- paths drawn dynamically by JS to match checkpoint positions -->
-        </svg>
+        <svg id="path-svg" preserveAspectRatio="none"></svg>
       </div>
 
-      <!-- Checkpoint cards -->
       <div class="checkpoint" data-cp="1">
         <div class="checkpoint-marker-wrap">
           <div class="checkpoint-marker">01</div>
@@ -2132,6 +2179,29 @@
 <script>
   /* ============ DEFAULT PROJECTS ============ */
   const defaultProjects = [
+    {
+      "title": "Whiteboard",
+      "desc": "Cloud-native student portal (LMS) built as an end-to-end cloud architecture and deployment project on Microsoft Azure. Designed a three-tier architecture using Azure App Service (Python 3.11, Gunicorn), Azure Database for PostgreSQL Flexible Server with SSL enforcement, and GitHub Actions CI/CD for zero-touch deployments on every push to main. Configured environment variables, networking and firewall rules, startup commands, and initialized the production database via Azure SSH. The application supports three role-based dashboards (Student, Instructor, Admin) with course management, quizzes, PDF materials, announcements, and polls. Primary focus: cloud infrastructure design, managed service configuration, cost-optimized deployment ($0 hosting on Azure free tiers), and production-grade CI/CD pipelines.",
+      "stack": [
+        "Microsoft Azure",
+        "Azure App Service",
+        "Azure PostgreSQL",
+        "GitHub Actions CI/CD",
+        "Flask",
+        "SQLAlchemy",
+        "Gunicorn",
+        "Python",
+        "PostgreSQL",
+        "Alembic"
+      ],
+      "status": "shipped",
+      "year": "2026",
+      "link": "#",
+      "videos": [
+        { "label": "Cloud Architecture", "url": "https://youtu.be/WnvHF-anVls" },
+        { "label": "Application Workflow", "url": "https://youtu.be/xzNz9rcPIQQ" }
+      ]
+    },
     {
       "title": "JobFlow AI",
       "desc": "AI-powered job application assistant that automates the entire application workflow, scaling daily output from 8 manual applications to 20 fully personalized submissions per day.",
@@ -2282,6 +2352,29 @@
       card.className = 'project-card';
       const stackHtml = (p.stack || []).map(s => `<span>${escapeHtml(s)}</span>`).join('');
       const statusClass = p.status === 'shipped' ? 'shipped' : p.status === 'live' ? 'live' : '';
+
+      // Determine the action button(s)
+      let actionHtml = '';
+      if (p.videos && Array.isArray(p.videos) && p.videos.length > 0) {
+        // Video dropdown button
+        const videoLinks = p.videos.map(v =>
+          `<a href="${escapeHtml(v.url)}" target="_blank" rel="noopener">${escapeHtml(v.label)}</a>`
+        ).join('');
+        actionHtml = `
+          <div class="video-dropdown-wrap">
+            <button class="video-dropdown-btn" onclick="toggleVideoDropdown(this)">
+              VIEW <span class="dd-arrow">▲</span>
+            </button>
+            <div class="video-dropdown-menu">
+              ${videoLinks}
+            </div>
+          </div>`;
+      } else if (p.link && p.link !== '#') {
+        actionHtml = `<a class="project-link" href="${escapeHtml(p.link)}" target="_blank" rel="noopener">VIEW</a>`;
+      } else {
+        actionHtml = '<span class="project-link" style="opacity:0.4; cursor:default; background: var(--paper-shade); border-color: var(--ink); color: var(--ink); box-shadow: 3px 3px 0 var(--ink);">PRIVATE BUILD</span>';
+      }
+
       card.innerHTML = `
         <div class="project-body">
           <div class="project-meta-row">
@@ -2291,7 +2384,7 @@
           <h3 class="project-title">${escapeHtml(p.title)}</h3>
           <p class="project-desc">${escapeHtml(p.desc)}</p>
           <div class="project-stack">${stackHtml}</div>
-          ${p.link && p.link !== '#' ? `<a class="project-link" href="${escapeHtml(p.link)}" target="_blank" rel="noopener">VIEW</a>` : '<span class="project-link" style="opacity:0.4; cursor:default; background: var(--paper-shade); border-color: var(--ink); color: var(--ink); box-shadow: 3px 3px 0 var(--ink);">PRIVATE BUILD</span>'}
+          ${actionHtml}
         </div>
         <div class="edit-actions">
           <button onclick="editProject(${idx})">Edit</button>
@@ -2300,6 +2393,33 @@
       grid.appendChild(card);
     });
   }
+
+  /* ============ VIDEO DROPDOWN TOGGLE ============ */
+  window.toggleVideoDropdown = function(btn) {
+    const menu = btn.nextElementSibling;
+    const isOpen = menu.classList.contains('open');
+
+    // Close all other open dropdowns first
+    document.querySelectorAll('.video-dropdown-menu.open').forEach(m => {
+      m.classList.remove('open');
+      m.previousElementSibling.classList.remove('open');
+    });
+
+    if (!isOpen) {
+      menu.classList.add('open');
+      btn.classList.add('open');
+    }
+  };
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.video-dropdown-wrap')) {
+      document.querySelectorAll('.video-dropdown-menu.open').forEach(m => {
+        m.classList.remove('open');
+        m.previousElementSibling.classList.remove('open');
+      });
+    }
+  });
 
   function setEditMode(on) {
     editMode = on;
@@ -2390,23 +2510,16 @@
     const checkpoints = timeline.querySelectorAll('.checkpoint');
     if (!checkpoints.length) return;
 
-    const tlRect = timeline.getBoundingClientRect();
-    const tlTop = timeline.offsetTop;
-    const tlLeft = timeline.offsetLeft;
-
-    // Get center positions of each marker relative to timeline
     const points = [];
     checkpoints.forEach(cp => {
       const marker = cp.querySelector('.checkpoint-marker-wrap');
       if (!marker) return;
       const r = marker.getBoundingClientRect();
-      // Position relative to timeline element
       const x = r.left - timeline.getBoundingClientRect().left + r.width / 2;
       const y = r.top - timeline.getBoundingClientRect().top + r.height / 2;
       points.push({ x, y });
     });
 
-    // Add a final point at the end flag
     const endFlag = timeline.querySelector('.timeline-end');
     if (endFlag) {
       const r = endFlag.getBoundingClientRect();
@@ -2417,22 +2530,17 @@
 
     if (points.length < 2) return;
 
-    // Set SVG dimensions
     const w = timeline.offsetWidth;
     const h = timeline.offsetHeight;
     svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
     svg.setAttribute('width', w);
     svg.setAttribute('height', h);
 
-    // Build a smooth curved path
     let pathD = `M ${points[0].x} ${points[0].y}`;
     for (let i = 1; i < points.length; i++) {
       const prev = points[i - 1];
       const curr = points[i];
-      // Use cubic bezier — control points create the wandering S-curve
       const midY = (prev.y + curr.y) / 2;
-      // Alternate sweep direction for organic feel
-      const sweep = i % 2 === 0 ? -1 : 1;
       const ctrl1x = prev.x;
       const ctrl1y = midY;
       const ctrl2x = curr.x;
@@ -2445,7 +2553,6 @@
       <path class="path-fill" id="path-fill" d="${pathD}"/>
     `;
 
-    // Set up the fill animation
     const pathFill = svg.querySelector('#path-fill');
     const pathLength = pathFill.getTotalLength();
     pathFill.style.strokeDasharray = pathLength;
@@ -2465,7 +2572,6 @@
     const tlBottom = tlRect.bottom;
     const tlHeight = tlRect.height;
 
-    // How far through the timeline are we?
     let progress = 0;
     if (tlTop < triggerLine && tlBottom > 0) {
       const traveled = triggerLine - tlTop;
@@ -2474,14 +2580,12 @@
       progress = 1;
     }
 
-    // Animate the orange path fill
     const pathFill = document.getElementById('path-fill');
     if (pathFill) {
       const len = parseFloat(pathFill.dataset.length || '0');
       pathFill.style.strokeDashoffset = len * (1 - progress);
     }
 
-    // Mark checkpoints as reached based on individual position
     const checkpoints = timeline.querySelectorAll('.checkpoint');
     let lastReachedIdx = -1;
     checkpoints.forEach((cp, idx) => {
@@ -2495,7 +2599,6 @@
         cp.classList.remove('current');
       }
     });
-    // Mark the next one as "current" (about to be reached)
     if (lastReachedIdx >= 0 && lastReachedIdx < checkpoints.length - 1) {
       checkpoints[lastReachedIdx + 1].classList.add('current');
     } else if (lastReachedIdx === -1 && checkpoints.length > 0) {
@@ -2534,7 +2637,6 @@
   updateStatusDisplay();
   setInterval(updateStatusDisplay, 30000);
 
-  // Build timeline path after layout settles
   function rebuildTimeline() {
     buildTimelinePath();
     updateTimelineProgress();
@@ -2544,7 +2646,6 @@
   setTimeout(rebuildTimeline, 100);
   setTimeout(rebuildTimeline, 500);
 
-  // Animate path on scroll + nav scroll-spy
   let ticking = false;
   window.addEventListener('scroll', () => {
     if (!ticking) {
@@ -2566,14 +2667,12 @@
 
   function updateNavSpy() {
     if (!navBar) return;
-    // Add scrolled state shadow line after 40px
     if (window.scrollY > 40) {
       navBar.classList.add('scrolled');
     } else {
       navBar.classList.remove('scrolled');
     }
 
-    // Find current section by checking which one is most in view
     const triggerLine = window.innerHeight * 0.35;
     let currentId = sectionIds[0];
     for (const id of sectionIds) {
@@ -2594,13 +2693,11 @@
   }
   updateNavSpy();
 
-  // Mobile burger toggle
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => {
       navToggle.classList.toggle('open');
       navLinks.classList.toggle('open');
     });
-    // Close mobile menu when a link is clicked
     navLinkEls.forEach(link => {
       link.addEventListener('click', () => {
         navToggle.classList.remove('open');
