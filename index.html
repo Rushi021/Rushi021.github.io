@@ -1,15 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>RUSHI SAVANI :: BUILDER'S MANUAL</title>
-<meta name="description" content="Rushi Savani · Data Scientist & ML Engineer · Portfolio rendered as a retro-tech expansion kit." />
+<meta name="description" content="Rushi Savani · Data Scientist & AI Engineer · Portfolio rendered as a retro-tech expansion kit." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Archivo+Black&family=Archivo:wght@400;500;700;900&family=Special+Elite&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Archivo+Black&family=Archivo:wght@400;500;700;900&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -115,7 +114,7 @@
   }
   .sidebar-right-text {
     writing-mode: vertical-rl;
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 11px;
     letter-spacing: 0.3em;
     color: var(--ink-soft);
@@ -419,7 +418,7 @@
   .hero-tag-row .panel-tag { margin-bottom: 0; }
 
   .hero-sub {
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 15px;
     line-height: 1.7;
     color: var(--ink);
@@ -471,6 +470,21 @@
     color: var(--ink);
   }
   .stat-card.orange .stat-value { color: var(--paper); }
+  .stat-value-dot {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .relocation-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--orange);
+    box-shadow: 0 0 8px var(--orange);
+    flex-shrink: 0;
+    animation: navPulse 2s ease-in-out infinite;
+  }
 
   .hero-right {
     position: relative;
@@ -531,7 +545,7 @@
     flex: 1;
   }
   .status-display-id {
-    font-family: 'JetBrains Mono', 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 11px;
     color: var(--ink-soft);
     letter-spacing: 0.1em;
@@ -565,7 +579,7 @@
     flex-shrink: 0;
   }
   .status-row-value {
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 12px;
     color: var(--ink);
     text-align: right;
@@ -590,14 +604,14 @@
     border-bottom: 1px dashed var(--ink-line);
   }
   .now-label {
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 11px;
     color: var(--orange);
     margin-bottom: 8px;
     letter-spacing: 0.1em;
   }
   .now-text {
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 13px;
     line-height: 1.6;
     color: var(--ink);
@@ -635,7 +649,7 @@
     transform: translateX(4px);
   }
   .status-cta-note {
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 10px;
     color: var(--ink-soft);
     text-align: center;
@@ -695,7 +709,7 @@
     text-transform: uppercase;
   }
   .principle-body {
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 13px;
     line-height: 1.8;
     color: var(--ink);
@@ -734,13 +748,13 @@
     letter-spacing: 0.1em;
   }
   .tool-cell-id {
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 11px;
     color: var(--orange);
   }
   .tool-list {
     list-style: none;
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 14px;
     line-height: 2;
   }
@@ -819,7 +833,7 @@
     justify-content: center;
   }
   .exp-industries-label {
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 11px;
     color: var(--orange);
     margin-bottom: 16px;
@@ -997,7 +1011,7 @@
     margin-bottom: 6px;
   }
   .checkpoint-company {
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 14px;
     color: var(--orange);
     margin-bottom: 14px;
@@ -1017,7 +1031,7 @@
     background: rgba(245, 185, 66, 0.06);
   }
   .checkpoint-desc {
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 13px;
     line-height: 1.75;
     color: var(--ink);
@@ -1027,7 +1041,7 @@
     gap: 12px;
     margin-top: 14px;
     flex-wrap: wrap;
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 10px;
     color: var(--ink-soft);
     letter-spacing: 0.05em;
@@ -1090,7 +1104,7 @@
   }
   .edu-stamp {
     display: inline-block;
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 10px;
     letter-spacing: 0.2em;
     padding: 4px 10px;
@@ -1108,7 +1122,7 @@
     margin-bottom: 8px;
   }
   .edu-degree {
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 12px;
     color: var(--orange);
     margin-bottom: 14px;
@@ -1122,7 +1136,7 @@
     border-bottom: 1px dashed var(--ink-line);
   }
   .edu-meta-item {
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 13px;
     color: var(--ink);
     line-height: 1.4;
@@ -1154,7 +1168,7 @@
     gap: 6px;
   }
   .edu-coursework-list span {
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 12px;
     padding: 6px 12px;
     background: var(--paper);
@@ -1168,7 +1182,7 @@
     color: var(--orange);
   }
   .edu-detail {
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 13px;
     line-height: 1.75;
     color: var(--ink);
@@ -1292,7 +1306,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 14px;
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -1308,7 +1322,7 @@
     margin-bottom: 12px;
   }
   .project-desc {
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 13px;
     line-height: 1.75;
     color: var(--ink);
@@ -1469,7 +1483,7 @@
     border-left: 3px solid var(--amber);
     padding: 14px 20px;
     margin-bottom: 24px;
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 12px;
     color: var(--amber);
   }
@@ -1499,7 +1513,7 @@
     color: var(--ink);
   }
   .empty-state-text {
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 12px;
     line-height: 1.8;
     color: var(--ink-soft);
@@ -1562,7 +1576,7 @@
     padding: 10px 12px;
     background: var(--paper);
     border: 1px solid var(--ink-line);
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 13px;
     color: var(--ink);
     resize: vertical;
@@ -1608,7 +1622,7 @@
     text-shadow: 0 0 40px rgba(255, 90, 31, 0.4);
   }
   .contact-sub {
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 15px;
     margin-bottom: 36px;
     color: var(--ink);
@@ -1644,7 +1658,7 @@
     padding: 30px;
     background: var(--paper);
     border-top: 1px solid var(--ink-line);
-    font-family: 'Special Elite', monospace;
+    font-family: 'Archivo', sans-serif;
     font-size: 11px;
     letter-spacing: 0.1em;
     color: var(--ink-soft);
@@ -1719,7 +1733,7 @@
       <h1 class="headline-xl">RUSHI<br><span class="accent">SAVANI</span></h1>
 
       <div class="hero-headline-row">
-        <h2 class="headline-l">DATA SCIENTIST &<br>ML ENGINEER</h2>
+        <h2 class="headline-l">DATA SCIENTIST &<br>AI ENGINEER</h2>
       </div>
 
       <p class="hero-sub">
@@ -1734,11 +1748,15 @@
         </div>
         <div class="stat-card amber">
           <div class="stat-label">Specialization</div>
-          <div class="stat-value">Data Science & ML</div>
+          <div class="stat-value">Data Science & AI</div>
         </div>
         <div class="stat-card">
           <div class="stat-label">Based In</div>
           <div class="stat-value">Syracuse, NY</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Status</div>
+          <div class="stat-value stat-value-dot"><span class="relocation-dot"></span>Open to Relocation</div>
         </div>
       </div>
     </div>
@@ -1982,7 +2000,7 @@
     </div>
 
     <div class="projects-bar">
-      <p style="font-family: 'Special Elite', monospace; font-size: 13px; color: var(--ink-soft);">
+      <p style="font-family: 'Archivo', sans-serif; font-size: 13px; color: var(--ink-soft);">
         // the inventory
       </p>
       <div class="edit-controls">
