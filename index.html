@@ -1863,7 +1863,7 @@
         <li>TypeScript</li>
         <li>FastAPI</li>
         <li>REST APIs</li>
-        <li>Git</li>
+        <li>Git Version Control</li>
       </ul>
     </div>
 
@@ -1874,11 +1874,12 @@
       <ul class="tool-list">
         <li>Scikit-learn</li>
         <li>XGBoost</li>
+        <li>NumPy</li>
         <li>PyTorch</li>
         <li>Hugging Face Transformers</li>
-        <li>RoBERTa</li>
-        <li>Sentence-BERT</li>
+        <li>Natural Language Processing (NLP)</li>
         <li>Feature Engineering</li>
+        <li>Cross Validation</li>
         <li>Model Evaluation</li>
         <li>MLflow</li>
       </ul>
@@ -1891,13 +1892,10 @@
       <ul class="tool-list">
         <li>LangChain</li>
         <li>LangGraph</li>
-        <li>Retrieval-Augmented Generation</li>
+        <li>Retrieval-Augmented Generation (RAG)</li>
         <li>Prompt Engineering</li>
-        <li>Vector Search</li>
-        <li>Qdrant</li>
-        <li>AWS Bedrock</li>
-        <li>Vertex AI / Gemini</li>
-        <li>OpenAI</li>
+        <li>Vector Database</li>
+        <li>AWS Bedrock, SageMaker</li>
       </ul>
     </div>
 
@@ -1906,13 +1904,12 @@
         <span class="tool-cell-title">Cloud & Deployment</span>
       </div>
       <ul class="tool-list">
-        <li>AWS</li>
+        <li>AWS EC2 / ECS</li>
         <li>Microsoft Azure</li>
         <li>Azure App Service</li>
-        <li>Docker</li>
-        <li>Kubernetes / EKS</li>
+        <li>Docker / Kubernetes</li>
         <li>GitHub Actions CI/CD</li>
-        <li>FastAPI Deployment</li>
+        <li>CloudWatch Monitoring</li>
       </ul>
     </div>
 
@@ -1921,12 +1918,13 @@
         <span class="tool-cell-title">Data Systems & BI</span>
       </div>
       <ul class="tool-list">
+        <li>Power BI</li>
+        <li>Tableau</li>
         <li>PostgreSQL</li>
         <li>MySQL</li>
         <li>Data Modeling</li>
         <li>ETL/ELT Pipelines</li>
-        <li>Power BI</li>
-        <li>DAX</li>
+        <li>A/B Testing</li>
         <li>Streamlit</li>
       </ul>
     </div>
@@ -1949,7 +1947,7 @@
         <h3 class="edu-school">Syracuse University</h3>
         <p class="edu-degree">// Master's in Information Systems</p>
         <div class="edu-meta-row">
-          <span class="edu-meta-item"><strong>GPA</strong> 3.85 / 4.00</span>
+          <span class="edu-meta-item"><strong>GPA</strong> 3.86 / 4.00</span>
           <span class="edu-meta-item"><strong>Location</strong> Syracuse, New York</span>
         </div>
         <div class="edu-coursework">
@@ -1981,6 +1979,7 @@
             <span>Artificial Intelligence & Data Science</span>
             <span>Big Data Analytics</span>
             <span>Data Mining & Business Intelligence</span>
+            <span>Software Engineering</span>
             <span>Engineering Mathematics III</span>
           </div>
         </div>
@@ -2200,7 +2199,7 @@
   const defaultProjects = [
     {
       "title": "Whiteboard",
-      "desc": "End-to-end cloud architecture and deployment project on Microsoft Azure. Designed a three-tier production setup using Azure App Service, Azure PostgreSQL with SSL enforcement, and GitHub Actions CI/CD for zero-touch deployments on every push to main. Configured networking, firewall rules, environment management, and production database initialization via Azure SSH. Built to demonstrate hands-on cloud infrastructure skills that complement ML model deployment workflows.",
+      "desc": "A production-style three-tier deployment on Azure App Service and PostgreSQL, with SSL-enforced security and GitHub Actions CI/CD automating zero-touch deploys on every push to main, built for robust, scalable infrastructure that integrates cleanly with ML deployment workflows",
       "stack": [
         "Microsoft Azure",
         "Azure App Service",
@@ -2223,7 +2222,7 @@
     },
     {
       "title": "PrivateRAG",
-      "desc": "A fully private, local RAG system built for secure document intelligence over sensitive data. Designed for teams that need to query clinical notes, SOPs, and internal policy docs without sending anything to external APIs. Supports multiple model backends (LlamaCPP, Ollama, cloud providers) through config-driven profiles, exposes an OpenAI-compatible API for seamless integration into internal tools, and includes a Gradio UI for interactive usage. Containerized with Docker for reproducible deployment. Your data never leaves your machine.",
+      "desc": "A fully private, end-to-end RAG pipeline with document ingestion, embedding, and vector indexing through Qdrant, followed by retrieval and generation, built to query sensitive files like clinical notes, SOPs, and internal policy docs without any data leaving the machine. Runs on swappable LlamaCPP/Ollama backends behind an OpenAI-compatible API, with a Gradio UI for easy integration.",
       "stack": [
         "Python",
         "RAG",
