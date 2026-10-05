@@ -27,7 +27,7 @@
   :root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
   html { scroll-behavior: smooth; scroll-padding-top: env(safe-area-inset-top, 0px); }
   body {
-    background: #E6DED2;
+    background: var(--cream);
     color: var(--ink);
     font-family: var(--sans);
     font-size: 15px;
@@ -39,16 +39,15 @@
   :focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
 
   .sheet {
-    max-width: 1200px;
+    max-width: none;
+    width: 100%;
     margin: 0 auto;
     background: var(--cream);
     position: relative;
     overflow: clip;
-    box-shadow: 0 0 0 1px rgba(27,24,21,.04), 0 30px 80px -40px rgba(27,24,21,.35);
   }
-  @media (min-width: 1240px) { .sheet { margin: 32px auto; border-radius: 28px; } }
 
-  .wrap { padding: 0 56px; }
+  .wrap { padding: 0 clamp(22px, 4.5vw, 96px); }
   @media (max-width: 760px) { .wrap { padding: 0 22px; } }
 
   .small-caps {
